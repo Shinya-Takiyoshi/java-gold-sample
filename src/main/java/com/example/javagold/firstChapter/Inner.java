@@ -29,13 +29,19 @@ public class Inner {
 
     }
     public void run(){
+        String message = "java1章";
         class Huge {
             //ローカルクラス
-            String message = "java1章";
             public void print(){
                 System.out.println(message);
             }
         }
+        //ローカルクラスのローカル変数は、class宣言の後にするとNG
+        //String message = "java1章";
+
+        //ローカルクラスのローカル変数は、実質的にfinalになるため不変である
+        //message = "書き換えできない";
+
         Huge i = new Huge();
         //ローカルクラスのメソッド実行
         i.print();
@@ -47,5 +53,5 @@ public class Inner {
         public int compareTo(Object o) {
             return 0;
         }
-    }
+    };
 }
